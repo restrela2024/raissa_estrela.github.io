@@ -1267,3 +1267,41 @@
 			}
 
 	}
+/* Side-by-side on desktop, stacked on mobile */
+.about-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap; /* allows wrap if space is tight */
+}
+
+/* Image scales nicely */
+.about-photo {
+  width: min(300px, 40vw);
+  height: auto;
+  border-radius: 8px;
+  flex: 0 0 auto;
+}
+
+/* Let text take remaining space */
+.about-text {
+  flex: 1 1 320px;
+  min-width: 260px;
+}
+
+/* Mobile: stack vertically and center image */
+@media (max-width: 768px) {
+  .about-wrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: left; /* keep text left-aligned; change to center if you prefer */
+  }
+  .about-photo {
+    width: 80%;
+    max-width: 360px;
+    margin-bottom: 8px;
+  }
+  .about-text {
+    width: 100%;
+  }
+}
